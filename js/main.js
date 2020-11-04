@@ -1,3 +1,5 @@
+import { myRouter } from './routes.js';
+
 const options = {
     el: '#app',
     router: myRouter,
@@ -8,15 +10,14 @@ const options = {
                 <h1>Appsus</h1>
                 <nav class="nav clear-list">
                     <router-link to="/" >Home</router-link>
-                    <router-link to="/book" >Book</router-link>
-                    <router-link to="/about" >About</router-link>
+                    <router-link to="/mail" >Mail</router-link>
+                    <router-link to="/keep" >Keep</router-link>
                 </nav>
             </div>  
         </header>
         <main class="main container">
             <router-view></router-view>
         </main>
-        <user-msg />
         <footer class="footer">
             Coffe Rights 2020
         </footer>
