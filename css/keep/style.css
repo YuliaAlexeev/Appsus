@@ -1,3 +1,14 @@
-body{
-  background-color: beige;
+.note-preview{
+  padding: 10px;
+  box-shadow: 0 0 7px 1px rgba(0,0,0,0.4);
+  background-color: #fff;
+  width: 300px;
+  border-radius: 10px;
+  margin: 0 20px 20px 0;
+}
+
+.notes-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
