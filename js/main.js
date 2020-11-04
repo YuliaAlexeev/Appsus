@@ -10,7 +10,7 @@ const options = {
                 <h1>Appsus</h1>
                 <nav class="nav clear-list">
                     <router-link to="/" >Home</router-link>
-                    <router-link to="/mail" >Mail</router-link>
+                    <router-link to="/mail/inbox" >Mail</router-link>
                     <router-link to="/keep" >Keep</router-link>
                 </nav>
             </div>  
@@ -19,7 +19,7 @@ const options = {
             <router-view></router-view>
         </main>
         <footer class="footer">
-            Coffe Rights 2020
+            Coffee Rights Mira & Yulia 2020
         </footer>
     </section>`,
 };
