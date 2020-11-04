@@ -1,1 +1,48 @@
+<<<<<<< HEAD
 @import './keep/style.css';
+=======
+.email-container{
+    display: flex;
+    margin: 15px;
+}
+
+.mail-header{
+  background-color: grey;
+  height: 100px;
+  text-align: center;
+}
+
+.emails-list{
+  margin-left: 80px;
+}
+
+.email-table{
+  border-bottom: 1px solid rgb(134, 134, 134);
+  border-collapse: collapse;
+}
+
+.email-row{
+  background-color: #ffffffe6;
+  font-weight: bold;
+}
+
+.email-row:hover{
+  box-shadow: -7px 11px 5px -6px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+
+.email-td{
+  border-top: 0.2px solid rgb(134, 134, 134);
+  padding: 10px;
+}
+
+.read{
+  background-color: #e7e7e7e6;
+  opacity: 0.8;
+  font-weight: normal;
+}
+
+.starred{
+  color: orange;
+}
+>>>>>>> 2d5b744eb43401b5fcf96b5ecda71daa91c6548e
