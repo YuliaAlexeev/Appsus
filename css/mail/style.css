@@ -1,6 +1,8 @@
 .email-container{
   display: flex;
   margin: 15px;
+  width: 80vw;
+  height: 60vh;
 }
 
 .mail-header{
@@ -46,3 +48,67 @@ color: orange;
 .clickable{
   cursor: pointer;
 }
+
+.new-email{
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  width: 80vw;
+  height: 60vh;
+}
+
+.newMessage{
+  border: 0.3px solid grey;
+  background-color: rgb(188, 193, 194);
+}
+
+.btn{
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.isOn{
+  background-color: rgb(221, 219, 219);
+  border-radius: 0 5px 5px 0;
+  width: 150px;
+}
+
+.flex{
+  display: flex;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.mail-dir{
+  margin-inline-start: 25px;
+}
+
+.compose{
+  font-size: large;
+  font-weight: bold;
+  border-radius: 25px;
+  border: 0.3px solid grey;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.compose-plus, .compose-mail{
+  margin-inline-start: 5px;
+  margin-inline-end: 5px;
+}
+
+.compose-plus{
+  font-size: 30px;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+
