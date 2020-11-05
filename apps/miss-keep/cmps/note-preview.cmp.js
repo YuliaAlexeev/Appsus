@@ -1,15 +1,16 @@
+import noteImg from './note-img.cmp.js';
+import noteTxt from './note-txt.cmp.js';
+
 export default{
     props: ['note'],
     name: 'note-preview',
     template: `<div class="note-preview" @mouseover="options=true" @mouseleave="options=false" :style="{ 'background-color': bgColor }"> 
-                   <p>isPinned: {{note.isPinned}}</p>
-                   <p v-if="note.info.txt">{{note.info.txt}}</p>
+                   <!-- <p v-if="note.info.txt">{{note.info.txt}}</p> -->
+                   <component :is="note.type" :note="note" />
 
                    <div v-show="options" class="options">
-                        <button @click="emitRemove(currNote.id)">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                    
+                        <button @click="emitRemove(note.id)" class="fas fa-trash-alt"></button>
+                        <button class="note-preview-pin fas fa-thumbtack"></button>
                     </div>
                 </div>  
     `,
@@ -27,8 +28,15 @@ export default{
         },
     },
     created(){
-        console.log('id', this.note.id)
+        // console.log('id', this.note.id)
+        
+        // if(this.note.style.backgroundColor != undefined){
+
+        // }
         this.bgColor = this.note.style.backgroundColor
-       
+    },
+    components: {
+        noteImg,
+        noteTxt
     }
 }

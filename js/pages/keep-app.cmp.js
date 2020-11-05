@@ -1,45 +1,48 @@
 import { noteService } from "../../apps/miss-keep/services/keep-service.js";
 import noteList from '../../apps/miss-keep/cmps/note-list.cmp.js';
 
+import addNote from '../../apps/miss-keep/cmps/add-note.cmp.js';
+
 export default {
     name: 'keep-app',
-    template:
-    `<section>
-        <div class="new-note">
-            <input type="text" v-model="newNote.info.txt" placeholder="add your note" />
-            <button @click="addNote" class="new-note-btn fas fa-font"></button>
-            <button @click="addImg" class="new-note-btn fas fa-image"></button>
-            <button @click="addList" class="new-note-btn fas fa-list"></button>
-            <button @click="addVideo" class="new-note-btn fab fa-youtube"></button>
-            <button @click="addNote" class="new-note-btn fas fa-plus"></button>
-           
-            </button>
-        </div>
+    template: `<section>
+        <add-note @added="addNote"></add-note>
         <note-list v-show="notesToShow" :notes="notesToShow"></note-list>
-
     </section>`,
     data() {
         return {
             // txt: '',
             notes: noteService.getNotes(),
-            newNote: noteService.getEmptyNote()
+            newNote: noteService.getEmptyNote(),
+           
+            // noteInfo: noteService.getNoteInfo()
+           
         }
     },
     computed:{
         notesToShow(){
             return this.notes;
+        },
+        notesInfo(){
+            return this.notes.info;
         }
+        
     },
     methods:{
-        addNote(){
-            console.log('Note added!', this.newNote)
-            noteService.addNewNote(this.newNote)
-        }
+        addNote(newNote){
+            console.log('Note added!', newNote)
+            noteService.addNewNote(newNote)
+        }, 
+ 
+            
     },
     created(){
         console.log('noteeeeeeeeees', this.notes)
     },
     components:{
-        noteList
+        noteList,
+        addNote
+
+
     }
 }

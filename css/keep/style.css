@@ -5,6 +5,8 @@
   width: 300px;
   border-radius: 10px;
   margin: 0 20px 20px 0;
+  position: relative;
+  min-height: 120px;
 }
 .notes-list {
   display: flex;
@@ -32,4 +34,12 @@
   padding: 10px;
   width: 40px;
   margin: 0 3px;
+}
+.note-preview-pin{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.note-preview img{
+  width: 100%;
 }
