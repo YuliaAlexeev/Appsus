@@ -11,5 +11,8 @@ export default {
     `,
     components: {
         notePreview
+    },
+    created(){
+
     }
 }
