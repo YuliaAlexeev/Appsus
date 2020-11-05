@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail-service.js';
-import { eventBus, EVENT_MAIL_WAS_READ } from '../js/services/event-bus-service.js';
+import { eventBus, EVENT_MAIL_WAS_READ } from '../../../../js/services/event-bus-service.js';
 
 export default {
     template: `
