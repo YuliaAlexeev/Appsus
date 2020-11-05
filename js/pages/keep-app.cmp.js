@@ -5,9 +5,16 @@ export default {
     name: 'keep-app',
     template:
     `<section>
-        <input type="text" v-model="newNote.info.txt" placeholder="add your note" />
-        <button class="note-btn" @click="addNote" >Add</button>
-
+        <div class="new-note">
+            <input type="text" v-model="newNote.info.txt" placeholder="add your note" />
+            <button @click="addNote" class="new-note-btn fas fa-font"></button>
+            <button @click="addImg" class="new-note-btn fas fa-image"></button>
+            <button @click="addList" class="new-note-btn fas fa-list"></button>
+            <button @click="addVideo" class="new-note-btn fab fa-youtube"></button>
+            <button @click="addNote" class="new-note-btn fas fa-plus"></button>
+           
+            </button>
+        </div>
         <note-list v-show="notesToShow" :notes="notesToShow"></note-list>
 
     </section>`,
@@ -30,7 +37,6 @@ export default {
         }
     },
     created(){
-       
         console.log('noteeeeeeeeees', this.notes)
     },
     components:{

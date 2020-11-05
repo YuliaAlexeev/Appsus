@@ -4,18 +4,16 @@ const options = {
     el: '#app',
     router: myRouter,
     template: `
-    <section>
+    <section class="wrapper">
         <header class="header">
-            <div class="header-inner container">
-                <h1>Appsus</h1>
-                <nav class="nav clear-list">
-                    <router-link to="/" >Home</router-link>
-                    <router-link to="/mail/inbox" >Mail</router-link>
-                    <router-link to="/keep" >Keep</router-link>
-                </nav>
-            </div>  
+            <h1>Appsus</h1>
+            <nav class="nav clear-list">
+                <router-link to="/" >Home</router-link>
+                <router-link to="/mail/inbox" >Mail</router-link>
+                <router-link to="/keep" >Keep</router-link>
+            </nav>  
         </header>
-        <main class="main container">
+        <main class="main">
             <router-view></router-view>
         </main>
         <footer class="footer">

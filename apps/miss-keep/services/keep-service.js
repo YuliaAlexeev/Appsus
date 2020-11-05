@@ -5,23 +5,25 @@ const STORAGE_KEY = 'notesDB';
 
 var gNotesData = [
     {
+        id: 'n717',
         type: "NoteText",
         isPinned: true,
         info: {
             txt: "full stack me baby!"
         },
         style: {
-            backgroundColor: "pink"
+            backgroundColor: "#bddaf2"
         }
     },
     {
+        id: 'n718',
         type: "NoteImg",
         info: {
             url: "http://some-img/me",
             title: "Me playing Mi"
         },
         style: {
-            backgroundColor: "#00d"
+            backgroundColor: "#7166f9"
         }
     },
 ]
