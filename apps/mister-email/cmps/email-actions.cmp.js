@@ -35,7 +35,6 @@ export default {
         this.updateUnread();
 
         eventBus.$on(EVENT_MAIL_WAS_READ, () => {
-            console.log('catched');
             this.updateUnread();
         });
     },
