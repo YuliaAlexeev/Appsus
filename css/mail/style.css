@@ -1,18 +1,18 @@
 .email-container{
   display: flex;
-  margin: 15px;
-  width: 80vw;
+  margin: 20px;
+  /* width: 90vw; */
   height: 60vh;
 }
 
 .mail-header{
-background-color: grey;
+background-color: rgb(234, 215, 253);
 height: 100px;
 text-align: center;
 }
 
 .emails-list{
-margin-left: 80px;
+  margin-left: 20px;
 }
 
 .email-table{
@@ -21,13 +21,28 @@ border-collapse: collapse;
 }
 
 .email-row{
-background-color: #ffffffe6;
+/* background-color: #ffffffe6; */
+background-color: rgba(250,250,250,0.5);
 font-weight: bold;
+text-align: left;
 }
 
+.trash, .read-unread{
+  opacity: 0;
+}
+
+
 .email-row:hover{
-box-shadow: -7px 11px 5px -6px rgba(0,0,0,0.75);
-cursor: pointer;
+  box-shadow: -7px 11px 5px -6px rgba(0,0,0,0.75);
+  cursor: pointer;
+}
+
+.email-row:hover .trash{
+  opacity: 1;
+}
+
+.email-row:hover .read-unread{
+  opacity: 1;
 }
 
 .email-td{
@@ -52,9 +67,9 @@ color: orange;
 .new-email{
   display: flex;
   flex-direction: column;
-  margin-left: 80px;
-  width: 80vw;
+  width: 60vw;
   height: 60vh;
+  margin-inline-start: 80px;
 }
 
 .newMessage{
@@ -110,5 +125,27 @@ color: orange;
 .space-between{
   justify-content: space-between;
 }
+
+.mail-details{
+  background-color: white;
+  width: 500px;
+  padding: 30px;
+}
+
+.mail-details-container{
+  margin-inline-start: 80px;
+}
+
+.unread{
+  margin-inline-start: 20px;
+  font-weight: bold;
+}
+
+.input-search{
+  padding: 30px;
+  border-radius: 5px;
+  width: 300px;
+}
+
 
 

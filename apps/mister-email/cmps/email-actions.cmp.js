@@ -1,3 +1,6 @@
+import { mailService } from '../services/mail-service.js';
+import { eventBus, EVENT_MAIL_WAS_READ } from '../../../../js/services/event-bus-service.js';
+
 export default {
     template: `
         <div class="side-bar">
@@ -6,7 +9,7 @@ export default {
                 <span class="compose-mail">Compose</span>
             </div>
             <div :class="{isOn: isInputOn}" class="clickable flex align-center" @click="routeToInbox">
-                <img src="apps/mister-email/assets/inbox.png" alt=""> <span class="mail-dir">Inbox</span>
+                <img src="apps/mister-email/assets/inbox.png" alt=""> <span class="mail-dir">Inbox <span class="unread">{{unread}}</span></span>
             </div>
             <div :class="{isOn: isSentOn}" class="clickable flex align-center" @click="routeToSentMails">
                 <img src="apps/mister-email/assets/sent.png" alt=""> <span class="mail-dir">Sent</span>
@@ -24,10 +27,22 @@ export default {
             isInputOn: true,
             isStarredOn: false,
             isDeletedOn: false,
-            isSentOn: false
+            isSentOn: false,
+            unread: ''
         }
     },
+    created(){
+        this.updateUnread();
+
+        eventBus.$on(EVENT_MAIL_WAS_READ, () => {
+            console.log('catched');
+            this.updateUnread();
+        });
+    },
     methods: {
+        updateUnread(){
+            this.unread = mailService.getUnreadNum();
+        },
         routeToSentMails(){
             this.removeAllOn();
             this.isSentOn = true;

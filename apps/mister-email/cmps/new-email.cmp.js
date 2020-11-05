@@ -1,7 +1,6 @@
 import { mailService } from "../services/mail-service.js";
 
 export default {
-    props: ['prevDir'],
     template: `
         <form class="new-email" @submit.prevent="sendMail">
             <div class="newMessage flex space-between">
@@ -16,20 +15,20 @@ export default {
     `,
 
     data() {
-        return{
+        return {
             newMail: null
         }
-    }, 
-    created(){
+    },
+    created() {
         this.newMail = mailService.getEmptyMail();
     },
     methods: {
-        sendMail(){
+        sendMail() {
             mailService.sendMail(this.newMail);
-            this.$router.push(this.prevDir);
+            this.$router.push('inbox');
         },
-        cancelMail(){
-            this.$router.push(this.prevDir);
+        cancelMail() {
+            this.$router.push('inbox');
         }
     }
 }
