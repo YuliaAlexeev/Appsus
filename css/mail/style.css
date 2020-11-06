@@ -1,18 +1,29 @@
 .email-container{
   display: flex;
   margin: 20px;
-  /* width: 90vw; */
   height: 60vh;
 }
 
 .mail-header{
-background-color: rgb(234, 215, 253);
-height: 100px;
-text-align: center;
+  /* background-color: rgb(234, 215, 253); */
+  height: 100px;
+  text-align: center;
 }
 
 .emails-list{
   margin-left: 20px;
+}
+
+.sort{
+  padding: 7px;
+  border-radius: 5px;
+  margin-inline-start: 10px;
+}
+
+.filter-by-read{
+  padding: 7px;
+  border-radius: 5px;
+  margin-inline-start: 10px;
 }
 
 .email-table{
@@ -21,7 +32,6 @@ border-collapse: collapse;
 }
 
 .email-row{
-/* background-color: #ffffffe6; */
 background-color: rgba(250,250,250,0.5);
 font-weight: bold;
 text-align: left;
@@ -46,9 +56,15 @@ text-align: left;
 }
 
 .email-td{
-border-top: 0.2px solid rgb(134, 134, 134);
+border-top: 0.2px solid lightslategray;
 padding: 10px;
 }
+
+
+.reply:hover, .forward:hover{
+  background-color: #fff;
+}
+
 
 .read{
 background-color: #e7e7e7e6;
@@ -73,14 +89,31 @@ color: orange;
 }
 
 .newMessage{
-  border: 0.3px solid grey;
-  background-color: rgb(188, 193, 194);
+  border-bottom: 0.1px solid lightslategray;
+  background-color: #e1d3f6;
+  padding: 10px;
+}
+
+.message-text{
+  background-color: #e1d3f6;
+  border: none;
+  outline: none;
 }
 
 .btn{
-  padding: 5px;
   border-radius: 5px;
+  margin-top: 10px;
 }
+
+.send-btn{
+  font-size: large;
+  border: none;
+}
+
+.send-btn:hover{
+  background-color: white;
+}
+
 
 .isOn{
   background-color: rgb(221, 219, 219);
@@ -108,7 +141,7 @@ color: orange;
   font-size: large;
   font-weight: bold;
   border-radius: 25px;
-  border: 0.3px solid grey;
+  border: 0.3px solid lightslategray;
   padding: 10px;
   margin-bottom: 15px;
 }
@@ -127,13 +160,22 @@ color: orange;
 }
 
 .mail-details{
-  background-color: white;
-  width: 500px;
+  background-color: #e1d3f6;
+  width: 95vh;
   padding: 30px;
+}
+
+.mail-details > *{
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .mail-details-container{
   margin-inline-start: 80px;
+}
+
+.elem{
+  border-bottom: 0.3px solid lightslategray;
 }
 
 .unread{

@@ -50,3 +50,9 @@ input[type="text"]{
     text-align: center;
     padding: 10px;
 }
+
+.nav > *{
+    text-decoration: none;
+    color: #1c1c1f;
+    font-weight: bold;
+}

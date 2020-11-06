@@ -10,16 +10,14 @@ export default {
             <img src="apps/mister-email/assets/4.png" @click="toggleReadEmail"></img>
             <img src="apps/mister-email/assets/6.png"></img>
         </div>
-        <table class="mail-details"> 
-            <th>{{email.subject}}</th>
-            <tr>From: {{email.sender}}</tr>
-            <tr>{{email.body}}</tr>
-            <tr>{{email.sentAt}}</tr>
-            <tr>
-                <td><button>Reply</button></td>
-                <td><button>Forward</button></td>
-            </tr>
-        </table>
+
+        <div class="mail-details">
+            <div class="elem">Subject: {{email.subject}}</div>
+            <div class="elem">From: {{email.sender}}</div>
+            <div>{{email.body}}</div>
+            <img class="clickable reply" src="apps/mister-email/assets/reply.png" @click="replyToMail"></img>
+            <img class="clickable forward" src="apps/mister-email/assets/forward.png"></img>
+        </div>
     </div>
 
     `,
@@ -55,6 +53,11 @@ export default {
                 this.$router.push(`/mail/${this.prevDir}`);
             });
 
+        },
+        replyToMail(){
+            mailService.replyToMail(this.email.id).then(() => {
+                this.$router.push(`/mail/new`);
+            })
         }
     }
 

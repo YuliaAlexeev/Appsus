@@ -4,13 +4,15 @@ export default {
     template: `
         <form class="new-email" @submit.prevent="sendMail">
             <div class="newMessage flex space-between">
-                <span>New Message</span>
+                <span>Message</span>
                 <span class="cancel clickable" @click="cancelMail">x</span>
             </div>
-            <input type="text" placeholder="To" v-model="newMail.to" />
-            <input type="text" placeholder="Subject" v-model="newMail.subject" />
-            <textarea v-model="newMail.body" rows="10" cols="50"></textarea>
-            <div><button class="btn clickable">Send</button></div>
+            <input class="newMessage" type="text" placeholder="To" v-model="newMail.to" />
+            <input class="newMessage" type="text" placeholder="Subject" v-model="newMail.subject" />
+            <textarea class="message-text" v-model="newMail.body" rows="10" cols="50"></textarea>
+            <div><button class="btn send-btn clickable">
+                <img src="apps/mister-email/assets/sent.png" width=40></img>
+            </button></div>
         </form>
     `,
 
@@ -20,7 +22,7 @@ export default {
         }
     },
     created() {
-        this.newMail = mailService.getEmptyMail();
+        this.newMail = mailService.getMailTemplate();
     },
     methods: {
         sendMail() {
