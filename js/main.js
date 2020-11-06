@@ -1,4 +1,5 @@
 import { myRouter } from './routes.js';
+import userMsg from '../js/services/user-msg-service.js';
 
 const options = {
     el: '#app',
@@ -20,6 +21,9 @@ const options = {
             Coffee Rights Mira & Yulia 2020
         </footer>
     </section>`,
+    components:{
+        userMsg
+    }
 };
 
 const app = new Vue(options);

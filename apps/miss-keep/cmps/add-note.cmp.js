@@ -7,7 +7,7 @@ export default {
             <button @click="setType('noteTxt')" class="new-note-btn fas fa-font"></button> 
             <button @click="setType('noteImg')" class="new-note-btn fas fa-image"></button> 
             <button @click="setType('noteTodo')" class="new-note-btn fas fa-list"></button>
-            <!--<button @click="addVideo" class="new-note-btn fab fa-youtube"></button> -->
+            <button @click="setType('noteVideo')" class="new-note-btn fab fa-youtube"></button>
             <button @click="emitAddNote" class="new-note-btn fas fa-plus"></button>
         </div>
     `,
@@ -19,14 +19,15 @@ export default {
                 info: {
                     txt: '',
                     url: '',
-                    todos: [
-                        {
-                            txt: 'Do this',
-                        },
-                        {
-                            txt: 'Do that',
-                        },
-                    ],
+                    todos: ''
+                    // todos: [
+                    //     {
+                    //         txt: 'Do this',
+                    //     },
+                    //     {
+                    //         txt: 'Do that',
+                    //     },
+                    // ],
                 },
             },
         };
@@ -38,6 +39,7 @@ export default {
                 noteTxt: 'Type here...',
                 noteImg: 'Enter image url',
                 noteTodo: 'Enter the following format: todo,todo,todo',
+                noteVideo: 'Enter YouTube url',
             };
             return typeResults[type];
             //  return this.newNote.type === 'noteTxt'? 'type here...' : 'Enter image url'
@@ -55,9 +57,11 @@ export default {
                 this.newNote.info.url = this.input;
             } else if (this.newNote.type === 'noteTodo') {
                 this.newNote.info.todos = this.input;
+            }   else if (this.newNote.type === 'noteVideo') {
+                this.newNote.info.url = this.input;
             }
             this.$emit('added', JSON.parse(JSON.stringify(this.newNote)));
-            this.newNote = { type: 'noteTxt', info: { txt: '' } };
+            // this.newNote = { type: 'noteTxt', info: { txt: '' } };
         },
     },
 };
