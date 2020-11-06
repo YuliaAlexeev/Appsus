@@ -40,11 +40,12 @@ export default {
             if(currDate.getFullYear() > emailDate.getFullYear()){
                 return `${emailDate.getDate()}/${emailDate.getMonth()}/${emailDate.getFullYear()}`;
             }else{
-                if(currDate.getMonth() > emailDate.getMonth() && currDate.getDate() !== emailDate.getDate()){
+                if(currDate.getMonth() > emailDate.getMonth() || (currDate.getMonth() === emailDate.getMonth() 
+                    && currDate.getDate() > emailDate.getDate())){
                     var date = emailDate.toDateString().split(' ');
                     return `${date[1]} ${date[2]}`;
-                }else if(currDate.getMonth() > emailDate.getMonth() && currDate.getDate() === emailDate.getDate()){
-                    return emailDate.toLocaleTimeString();
+                }else if(currDate.getDate() === emailDate.getDate()){
+                    return emailDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                 }
             }
         }

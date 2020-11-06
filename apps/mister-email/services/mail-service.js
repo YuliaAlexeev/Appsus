@@ -73,6 +73,7 @@ function sendMail(mailTemplate){
         isSent: true, 
         sentAt : Date.now()
     }
+    console.log(newMail);
     gEmails.push(newMail);
     storageService.storeToStorage(MAIL_DB_KEY, gEmails);
 }
