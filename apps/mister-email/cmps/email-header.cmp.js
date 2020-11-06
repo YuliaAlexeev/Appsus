@@ -1,4 +1,4 @@
-import { eventBus, SORT, FILTER, SEARCH } from '../../../js/services/event-bus-service.js';
+import { eventBus, SORT, FILTER, SEARCH, OPEN_MENU } from '../../../js/services/event-bus-service.js';
 
 export default {
     template: `
@@ -43,7 +43,7 @@ export default {
             eventBus.$emit(SEARCH, this.search);
         },
         toggleMenu(){
-            
+            eventBus.$emit(OPEN_MENU);
         }
     }
 }
