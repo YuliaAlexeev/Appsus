@@ -1,5 +1,3 @@
-import { noteService } from '../services/keep-service.js';
-
 export default {
     template: `
     <div class="new-note">
@@ -42,7 +40,6 @@ export default {
                 noteVideo: 'Enter YouTube url',
             };
             return typeResults[type];
-            //  return this.newNote.type === 'noteTxt'? 'type here...' : 'Enter image url'
         },
     },
     methods: {

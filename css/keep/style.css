@@ -43,13 +43,15 @@
 }
 .note-preview img{
   width: 100%;
+  height: 250px;
+  object-fit: contain;
 }
 .note-preview-pin{
   position: absolute;
   right: 10px;
   top: 10px;
 }
-.controls button, label {
+.controls button, .controls label {
   background-color: transparent;
   border: 0;
   background: rgba(250,250,250,0.5);
@@ -59,7 +61,7 @@
   display: block;
   transition: all .2s ease-in-out;
 }
-.controls button:hover, label:hover {
+.controls button:hover, .controls label:hover {
   background-color: rgba(0,0,0,0.2);
 }
 .controls{
@@ -81,7 +83,7 @@
 
 /* NOTE GENERAL */
 
-.notes-list {
+.notes-list, .pinned-notes-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
