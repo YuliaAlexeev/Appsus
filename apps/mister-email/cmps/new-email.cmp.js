@@ -1,4 +1,5 @@
 import { mailService } from "../services/mail-service.js";
+import { eventBus, USR_MSG } from '../../../js/services/event-bus-service.js';
 
 export default {
     template: `
@@ -27,9 +28,11 @@ export default {
     methods: {
         sendMail() {
             mailService.sendMail(this.newMail);
+            eventBus.$emit(USR_MSG, 'Email sent');
             this.$router.push('inbox');
         },
         cancelMail() {
+            eventBus.$emit(USR_MSG, 'Email cancelled');
             this.$router.push('inbox');
         }
     }

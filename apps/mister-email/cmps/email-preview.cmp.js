@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail-service.js';
-import { eventBus, EVENT_MAIL_WAS_READ } from '../../../js/services/event-bus-service.js';
+import { eventBus, EVENT_MAIL_WAS_READ, USR_MSG } from '../../../js/services/event-bus-service.js';
 
 export default {
     props: ['email'],
@@ -60,6 +60,7 @@ export default {
         deleteEmail(){
             var isRead = this.email.isRead;
             mailService.deleteEmail(this.email.id).then(() => {
+                eventBus.$emit(USR_MSG, 'Email deleted');
                 if(!isRead) {
                     eventBus.$emit(EVENT_MAIL_WAS_READ);
                 }
