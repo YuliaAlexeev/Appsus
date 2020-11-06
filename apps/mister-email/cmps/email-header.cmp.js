@@ -41,6 +41,9 @@ export default {
         },
         searchMail(){
             eventBus.$emit(SEARCH, this.search);
+        },
+        toggleMenu(){
+            
         }
     }
 }

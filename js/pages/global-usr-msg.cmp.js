@@ -1,4 +1,4 @@
-import { eventBus, USR_MSG } from '../../../js/services/event-bus-service.js';
+import { eventBus, USR_MSG } from '../services/event-bus-service.js';
 
 var timer;
 
@@ -22,7 +22,6 @@ export default {
     },
     created() {
         eventBus.$on(USR_MSG, msg => {
-            console.log('here')
             this.msg = msg
             timer = setTimeout(() => {
                 console.log('closing');

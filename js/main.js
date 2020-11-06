@@ -1,5 +1,5 @@
 import { myRouter } from './routes.js';
-import userMsg from '../js/services/user-msg-service.js';
+import userMsg from './pages/global-usr-msg.cmp.js';
 
 const options = {
     el: '#app',
@@ -15,6 +15,7 @@ const options = {
             </nav>  
         </header>
         <main class="main">
+            <user-msg/>
             <router-view></router-view>
         </main>
         <footer class="footer">
