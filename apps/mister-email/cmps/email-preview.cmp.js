@@ -1,5 +1,5 @@
 import { mailService } from '../services/mail-service.js';
-import { eventBus, EVENT_MAIL_WAS_READ } from '../../../js/services/event-bus-service.js';
+import { eventBus, EVENT_MAIL_WAS_READ, USR_MSG } from '../../../js/services/event-bus-service.js';
 
 export default {
     props: ['email'],
@@ -40,11 +40,12 @@ export default {
             if(currDate.getFullYear() > emailDate.getFullYear()){
                 return `${emailDate.getDate()}/${emailDate.getMonth()}/${emailDate.getFullYear()}`;
             }else{
-                if(currDate.getMonth() > emailDate.getMonth() && currDate.getDate() !== emailDate.getDate()){
+                if(currDate.getMonth() > emailDate.getMonth() || (currDate.getMonth() === emailDate.getMonth() 
+                    && currDate.getDate() > emailDate.getDate())){
                     var date = emailDate.toDateString().split(' ');
                     return `${date[1]} ${date[2]}`;
-                }else if(currDate.getMonth() > emailDate.getMonth() && currDate.getDate() === emailDate.getDate()){
-                    return emailDate.toLocaleTimeString();
+                }else if(currDate.getDate() === emailDate.getDate()){
+                    return emailDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
                 }
             }
         }
@@ -60,6 +61,7 @@ export default {
         deleteEmail(){
             var isRead = this.email.isRead;
             mailService.deleteEmail(this.email.id).then(() => {
+                eventBus.$emit(USR_MSG, 'Email deleted');
                 if(!isRead) {
                     eventBus.$emit(EVENT_MAIL_WAS_READ);
                 }
