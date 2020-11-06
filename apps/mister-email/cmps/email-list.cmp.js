@@ -1,5 +1,6 @@
 import emailPreview from './email-preview.cmp.js';
 import { mailService } from '../services/mail-service.js';
+import { eventBus, SORT, FILTER, SEARCH } from '../../../js/services/event-bus-service.js';
 
 export default {
     template: `
@@ -14,13 +15,25 @@ export default {
     data() {
         return {
             emails: [],
-            filterBy: null,
+            filter: 'All',
+            sort: 'Date',
+            search: ''
         }
     },
     components: {
         emailPreview
     },
     created() {
+        eventBus.$on(FILTER, filter => {
+            this.filter = filter;
+        });
+        eventBus.$on(SORT, sort => {
+            this.sort = sort;
+        });
+        eventBus.$on(SEARCH, search => {
+            this.search = search;
+        });
+
         mailService.getEmails().then(emails => this.emails = emails);
     },
     computed: {
@@ -28,7 +41,13 @@ export default {
             var currDir = this.$route.params.dir;
             var emailsByDir = this.getByDir(currDir);
 
-            if (!this.filterBy) return emailsByDir;
+            var filteredEmais;
+            if (this.filter === 'All') filteredEmais = this.sortBy(emailsByDir, this.sort);
+            else if (this.filter === 'Read') filteredEmais = this.sortBy(emailsByDir.filter(email => (email.isRead)), this.sort);
+            else if (this.filter === 'Unread') filteredEmais = this.sortBy(emailsByDir.filter(email => (!email.isRead)), this.sort);
+
+            if (!this.search) return filteredEmais;
+            else return this.searchEmails(filteredEmais, this.search.toLowerCase());
         }
     },
     methods: {
@@ -38,9 +57,6 @@ export default {
         selectEmail(emailId) {
             mailService.getEmailById(emailId).then(email => this.selectedEmail = email);
 
-        },
-        setFilter(filterBy) {
-            this.filterBy = filterBy;
         },
         getByDir(directory) {
             var filteredEmails = [];
@@ -59,6 +75,21 @@ export default {
                     break;
             }
             return filteredEmails;
+        },
+        sortBy(emails, sortBy) {
+            if (sortBy === 'Sort by Title') {
+                return emails.sort((a, b) => a.subject.localeCompare(b.subject));
+            } else {
+                return emails.sort((a, b) => a.sentAt - b.sentAt);
+            }
+        },
+        searchEmails(emails, searchStr) {
+            var foundEmails = emails.filter(email => { return email.subject.toLowerCase().includes(searchStr) 
+            || email.sender.toLowerCase().includes(searchStr) 
+            || email.to.toLowerCase().includes(searchStr) 
+            || email.body.toLowerCase().includes(searchStr)});
+            
+            return foundEmails;
         }
     }
 }

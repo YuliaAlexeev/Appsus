@@ -3,6 +3,7 @@ import { eventBus, EVENT_MAIL_WAS_READ } from '../../../js/services/event-bus-se
 
 export default {
     template: `
+    <div class="side-bar-container">
         <div class="side-bar">
             <div class="clickable flex align-center compose" @click="composeNewMail">  
                 <span class="compose-plus">+</span>
@@ -21,6 +22,7 @@ export default {
                 <img src="apps/mister-email/assets/trash.png" alt=""> <span class="mail-dir">Deleted</span>
             </div>
         </div>
+    </div>
     `,
     data(){
         return {

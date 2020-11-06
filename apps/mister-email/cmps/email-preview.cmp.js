@@ -14,8 +14,11 @@ export default {
                 <td class="email-td trash" width=50 @click.stop="deleteEmail">
                     <img src="apps/mister-email/assets/trash.png">
                 </td>
-                <td class="email-td read-unread" width=50 @click.stop="toggleReadEmail">
-                    <img src="apps/mister-email/assets/4.png">
+                <td v-if="isRead" class="email-td read-unread" width=50 @click.stop="toggleReadEmail">
+                     <img src="apps/mister-email/assets/read.png">
+                </td>
+                <td v-if="!isRead" class="email-td read-unread" width=50 @click.stop="toggleReadEmail">
+                     <img src="apps/mister-email/assets/unread.png">
                 </td>
             </tr>
             

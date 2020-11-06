@@ -7,7 +7,7 @@ export default {
         <div>
             <img src="apps/mister-email/assets/3.png" @click="goBack"></img>
             <img src="apps/mister-email/assets/trash.png" @click="deleteEmail"></img>
-            <img src="apps/mister-email/assets/4.png" @click="toggleReadEmail"></img>
+            <img src="apps/mister-email/assets/unread.png" @click="toggleReadEmail"></img>
             <img src="apps/mister-email/assets/6.png"></img>
         </div>
 
