@@ -1,5 +1,4 @@
 @import './keep/style.css';
-
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 body {
@@ -12,39 +11,49 @@ body {
     font-family: 'Lato', sans-serif;
     font-size: 16px;
 }
+
 body, h1 {
     padding: 0;
     margin: 0;
 }
+
 iframe{
     border: 0;
 }
+
 button {
     cursor: pointer;
 }
+
 input, button, select {
     font-family: inherit;
 }
+
 input, button, audio {
     outline: 0;
 }
+
 input[type='text'] {
     padding: 10px;
  
     color: #a6a6b0;
 }
+
 ::placeholder {
     color: #a6a6b0;
 }
+
 .wrapper {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
+
 .main {
     flex: 1;
     margin: 20px 10px;
 }
+
 .header {
   background-color: #CA9FB4;
   display: flex;
@@ -52,12 +61,14 @@ input[type='text'] {
   padding: 40px;
   color:white
 }
+
 .footer {
   background-color:#394855;
   text-align: center;
   padding: 10px;
   color: white;
 }
+
 .nav > * {
     text-decoration: none;
     color:white;
@@ -68,70 +79,68 @@ input[type='text'] {
 /* ANIMATIONS */
 
 .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
-  }
-  .bounce-enter-active {
-    animation: bounce-in .5s;
-  }
-  .bounce-leave-active {
-    animation: bounce-in .5s reverse;
-  }
-  @keyframes bounce-in {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
+  transition: opacity .5s;
+}
 
-  .user-msg {
-    font-size: 18px;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #394855;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 
+.bounce-enter-active {
+  animation: bounce-in .5s;
+}
 
-  .welcome-pic{
-    margin: 40px;
-    border-radius: 15%;
-  }
+.bounce-leave-active {
+  animation: bounce-in .5s reverse;
+}
 
-  .apps-pic{
-    margin-top: 50px;
-    filter: brightness(0.7);
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
   }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
-  /* helpers */
-  .flex{
-    display: flex;
-  }
-  
-  .justify-center{
-    justify-content: center;
-  }
-  
-  .align-center{
-    align-items: center;
-  }
+.user-msg {
+  font-size: 18px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #394855;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
 
-  .clickable{
-    cursor: pointer;
-  }
+.welcome-pic{
+  margin: 40px;
+  border-radius: 15%;
+}
 
-  .clear-list{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+.apps-pic{
+  margin-top: 50px;
+  filter: brightness(0.7);
+}
+
+/* HELPERS */
+
+.flex{
+  display: flex;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.clickable{
+  cursor: pointer;
+}

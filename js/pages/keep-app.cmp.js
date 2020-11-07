@@ -2,7 +2,7 @@ import { noteService } from "../../apps/miss-keep/services/keep-service.js";
 import noteList from '../../apps/miss-keep/cmps/note-list.cmp.js';
 import addNote from '../../apps/miss-keep/cmps/add-note.cmp.js';
 import noteFilter from '../../apps/miss-keep/cmps/note-filter.cmp.js';
-import { eventBus, EVENT_REMOVE_NOTE, EVENT_SET_NOTE_COLOR, USR_MSG, EVENT_SET_PINNED } from '../services/event-bus-service.js';
+import { eventBus, EVENT_REMOVE_NOTE, EVENT_SET_NOTE_COLOR, USR_MSG, EVENT_SET_PINNED, UPDATE_NOTE_TODOS } from '../services/event-bus-service.js';
 
 export default {
     name: 'keep-app',
@@ -49,7 +49,10 @@ export default {
         })
         eventBus.$on(EVENT_SET_PINNED, (noteId, isPinned) => {
             noteService.setPinned(noteId, isPinned) 
-        })        
+        }) 
+        eventBus.$on(UPDATE_NOTE_TODOS, (noteId, todoId) => {
+            noteService.updateNoteTodos(noteId, todoId) 
+        })         
     },
     components:{
         noteList,

@@ -1,19 +1,22 @@
+import { eventBus, UPDATE_NOTE_TODOS } from '../../../js/services/event-bus-service.js';
+
 export default{
     props: ['note'],
     name: 'note-todo',
-    template: `<ul class="note-todo-list clear-list">
-                    <li class="note-todo-list-item" v-for="(todo,idx) in note.info.todos">
-                        <label :for="todo.id" @click="emitTodoStatus(idx)">
-                            <input :id="todo.id" type="checkbox" >
-                            {{todo.txt}}
-                        </label>
+    template: `<ul class="note-todo-list">
+                    <li class="note-todo-list-item" :class="getClass(idx)" @click.prevent="emitTodoStatus(idx)" v-for="(todo,idx) in note.info.todos">
+                        {{todo.txt}}
                     </li>
                 </ul>`,
+      
     methods:{
+        getClass(todoId){
+            if (this.note.info.todos[todoId].isDone){
+                return "todo-done"
+            }
+        },
         emitTodoStatus(todoId){
-            this.isDone = !this.isDone;
-            console.log(todoId, 'todoId', this.isDone)
-            //eventBus.$emit(EVENT_SET_DONE, noteId, this.isDone)
-        }
+            eventBus.$emit(UPDATE_NOTE_TODOS, this.note.id, todoId)
+        },
     }
 }

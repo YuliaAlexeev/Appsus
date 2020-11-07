@@ -4,10 +4,12 @@ var timer;
 
 export default {
     template: `
-        <section v-show="msg" class="user-msg">
-            <p>{{msg}}</p>
-            <button @click="closeMessege">x</button>
-        </section>
+        <transition name="fade">
+            <section v-show="msg" class="user-msg">
+                <p>{{msg}}</p>
+                <button @click="closeMessege">x</button>
+            </section>
+        </transition>
     `,
     data() {
         return {
