@@ -8,10 +8,7 @@
 
 body {
     color: #1c1c1f;
-    background: linear-gradient(#d7ccfc, transparent),
-        linear-gradient(to top left, #e4e9ee, transparent),
-        linear-gradient(to top right, #e9c6b3, transparent);
-    background-blend-mode: screen;
+    background: linear-gradient(90deg, rgba(231,209,220,1) 20%, rgba(229,243,255,1) 100%);
     height: 100vh;
     font-family: 'Lato', sans-serif;
     font-size: 16px;
@@ -22,8 +19,9 @@ body, h1 {
     margin: 0;
 }
 
-iframe{
+iframe, audio{
     border: 0;
+    width: 100%;
 }
 
 button {
@@ -120,6 +118,13 @@ input[type='text'] {
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
+  z-index: 9999;
+}
+
+.user-msg-btn {
+  color: #ca9fb4;
+  background: transparent;
+  border: 0;
 }
 
 .welcome-pic{
