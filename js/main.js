@@ -9,7 +9,7 @@ const options = {
     <section class="wrapper">
         <header class="header">
             <h1 class="clickable" @click="goToHomePage">Appsus</h1>
-            <nav class="nav clear-list">
+            <nav class="nav">
                 <router-link to="/" >Home</router-link>
                 <router-link to="/mail/inbox" >Mail</router-link>
                 <router-link to="/keep" >Keep</router-link>

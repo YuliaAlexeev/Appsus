@@ -7,12 +7,14 @@ var gNotesData = _createNotes();
 
 function _createNotes(){
     const notes =[];
-    notes.push(_createNote('noteTxt', false, 'full stack me baby!', undefined, undefined, undefined,'#7166f9' ));
-    notes.push(_createNote('noteImg', false, undefined, 'https://www.meissl.com/media/images/8f24db1f/schweiz.jpg', undefined, undefined ));
-    notes.push(_createNote('noteTxt', true, 'The most beautiful things in the world cannot be seen or even touched. They must be felt with the heart.', undefined, undefined, undefined,'#bddaf2' ));
-    notes.push(_createNote('noteImg', true, undefined, 'http://icatcare.org/app/uploads/2020/10/webinars-1-650x500.jpg', undefined, undefined, '#ff6a3b' ));
-    notes.push(_createNote('noteVideo', false, undefined, 'www.youtube.com/watch?v=H-PysSOwxsQ', undefined, undefined, '#ffc7f5' ));
-    notes.push(_createNote('noteImg', false, undefined, 'https://media.giphy.com/media/xULW8PLGQwyZNaw68U/giphy.gif', undefined, undefined, '#ff6a3b' ));
+    notes.push(_createNote('noteTxt', false, 'full stack me baby!', undefined, undefined, '#7166f9' ));
+    notes.push(_createNote('noteImg', false, undefined, 'https://www.meissl.com/media/images/8f24db1f/schweiz.jpg', undefined ));
+    notes.push(_createNote('noteTxt', true, 'The most beautiful things in the world cannot be seen or even touched. They must be felt with the heart.', undefined, undefined,'#bddaf2' ));
+    notes.push(_createNote('noteImg', true, undefined, 'https://icatcare.org/app/uploads/2020/10/webinars-1-650x500.jpg', undefined, '#ff6a3b' ));
+    notes.push(_createNote('noteVideo', false, undefined, 'www.youtube.com/watch?v=H-PysSOwxsQ', undefined, '#ffc7f5' ));
+    notes.push(_createNote('noteImg', false, undefined, 'https://media.giphy.com/media/xULW8PLGQwyZNaw68U/giphy.gif', undefined, '#ff6a3b' ));
+    notes.push(_createNote('noteAudio', false, undefined, 'https://www.bensound.com/bensound-music/bensound-theelevatorbossanova.mp3', undefined, '#02bf4f' ));
+    // notes.push(_createNote('noteTodo', true, undefined, undefined, undefined, [{ txt: 'dddddddddd', isDone: false }] , '#02bf4f' ));
     return notes;
 }
 
@@ -29,10 +31,7 @@ function _createNote(type, isPinned, txt, url, label, todos, backgroundColor = '
             txt,
             url,
             label,
-            todos,
-            // todos: [
-            //     { txt: ''}
-            // ]
+            todos
         },
         style: {
             backgroundColor
@@ -46,8 +45,8 @@ console.log('gNotes', gNotes);
 
 
 function addNewNote(note){
-    //type, isPinned, txt, url, label, todos, backgroundColor = '#ffffff'
     gNotes.unshift(_createNote(note.type, note.isPinned, note.info.txt, note.info.url, note.info.label, note.info.todos));
+    console.log('note.info.todos', note.info.todos)
     storageService.storeToStorage(STORAGE_KEY, gNotes);
 }
 

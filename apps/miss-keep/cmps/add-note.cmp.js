@@ -2,10 +2,11 @@ export default {
     template: `
     <div class="new-note">
         <input type="text" v-model="input" :placeholder="placeholder" />
-            <button @click="setType('noteTxt')" class="new-note-btn fas fa-font"></button> 
-            <button @click="setType('noteImg')" class="new-note-btn fas fa-image"></button> 
+            <button @click="setType('noteTxt')" class="new-note-btn fas fa-font" title="Add text"></button> 
+            <button @click="setType('noteImg')" class="new-note-btn fas fa-image" title="Add text"></button> 
             <button @click="setType('noteTodo')" class="new-note-btn fas fa-list"></button>
             <button @click="setType('noteVideo')" class="new-note-btn fab fa-youtube"></button>
+            <button @click="setType('noteAudio')" class="new-note-btn fas fa-volume-up"></button>
             <button @click="emitAddNote" class="new-note-btn fas fa-plus"></button>
         </div>
     `,
@@ -18,15 +19,7 @@ export default {
                 info: {
                     txt: '',
                     url: '',
-                    todos: '',
-                    // todos: [
-                    //     {
-                    //         txt: 'Do this',
-                    //     },
-                    //     {
-                    //         txt: 'Do that',
-                    //     },
-                    // ],
+                    todos: []
                 },
             },
         };
@@ -39,6 +32,7 @@ export default {
                 noteImg: 'Enter image url',
                 noteTodo: 'Enter the following format: todo,todo,todo',
                 noteVideo: 'Enter YouTube url',
+                noteAudio: 'Enter audio url',
             };
             return typeResults[type];
         },
@@ -54,8 +48,13 @@ export default {
                 } else if (this.newNote.type === 'noteImg') {
                     this.newNote.info.url = this.input;
                 } else if (this.newNote.type === 'noteTodo') {
-                    this.newNote.info.todos = this.input;
+                    let todoItems = this.input.split(',');
+                    todoItems.forEach(todoItem => {
+                        this.newNote.info.todos.push({ txt: todoItem, isDone: false })
+                    })
                 } else if (this.newNote.type === 'noteVideo') {
+                    this.newNote.info.url = this.input;
+                } else if (this.newNote.type === 'noteAudio') {
                     this.newNote.info.url = this.input;
                 }
                 this.$emit('added', JSON.parse(JSON.stringify(this.newNote)));

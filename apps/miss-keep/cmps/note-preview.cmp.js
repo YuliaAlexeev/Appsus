@@ -2,6 +2,7 @@ import noteImg from './note-img.cmp.js';
 import noteTxt from './note-txt.cmp.js';
 import noteTodo from './note-todo.cmp.js';
 import noteVideo from './note-video.cmp.js';
+import noteAudio from './note-audio.cmp.js';
 import { eventBus, EVENT_REMOVE_NOTE, EVENT_SET_NOTE_COLOR, EVENT_SET_PINNED } from '../../../js/services/event-bus-service.js';
 
 export default{
@@ -49,6 +50,7 @@ export default{
         noteImg,
         noteTxt,
         noteTodo,
-        noteVideo
+        noteVideo,
+        noteAudio
     }
 }

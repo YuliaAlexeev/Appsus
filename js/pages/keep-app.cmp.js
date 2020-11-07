@@ -20,7 +20,6 @@ export default {
     },
     computed:{
         notesToShow(){
-            //return this.notes;
             if(this.filterBy.byType === '') {
                 if(this.filterBy.byTxt === '') return this.notes;
                 const txt= this.filterBy.byTxt.toLowerCase();
@@ -33,14 +32,14 @@ export default {
     },
     methods:{
         addNote(newNote){
-            console.log('Note added!', newNote)
             noteService.addNewNote(newNote)
         },
         setFilter(filterBy){
             this.filterBy = filterBy;
         }
     },
-    created(){   
+    created(){  
+
         eventBus.$on(EVENT_REMOVE_NOTE, (noteId) => {
             eventBus.$emit(USR_MSG, 'Note has been removed successfully!');
             noteService.remove(noteId)
