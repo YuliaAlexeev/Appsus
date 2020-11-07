@@ -46,7 +46,6 @@ input[type='text'] {
     margin: 20px 10px;
 }
 .header {
-    /* background-color: #CAA7B8; */
     background-color: #CA9FB4;
     display: flex;
     justify-content: space-between;
@@ -62,7 +61,6 @@ input[type='text'] {
 }
 .nav > * {
     text-decoration: none;
-    /* color: #1c1c1f; */
     color:white;
     font-weight: bold;
     padding: 15px;
@@ -99,7 +97,9 @@ input[type='text'] {
     position: fixed;
     top: 20px;
     right: 20px;
-    background-color: #e1d3f6;
+    /* background-color: #e1d3f6; */
+    background-color: #394855;
+    color: white;
     padding: 10px 20px;
     border-radius: 5px;
   }
