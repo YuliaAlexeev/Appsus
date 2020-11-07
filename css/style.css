@@ -4,9 +4,9 @@
 
 body {
     color: #1c1c1f;
-    background: linear-gradient(#dccdf5, transparent),
+    background: linear-gradient(#d7ccfc, transparent),
         linear-gradient(to top left, #e4e9ee, transparent),
-        linear-gradient(to top right, #eecfde, transparent);
+        linear-gradient(to top right, #e9c6b3, transparent);
     background-blend-mode: screen;
     height: 100vh;
     font-family: 'Lato', sans-serif;
@@ -30,7 +30,7 @@ input, button {
 }
 input[type='text'] {
     padding: 10px;
-    border: 1px solid #d2d2d2;
+ 
     color: #a6a6b0;
 }
 ::placeholder {
@@ -49,12 +49,12 @@ input[type='text'] {
     background-color: #CA9FB4;
     display: flex;
     justify-content: space-between;
-    padding: 40px;
-    color:white
+    align-items: center;
+    padding: 10px;
 }
 .footer {
-    background-color:#394855;
-    /* background-color:#51606E; */
+    background-color: #7d8191;
+    color: #fff;
     text-align: center;
     padding: 10px;
     color: white;

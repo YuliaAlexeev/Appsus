@@ -46,7 +46,8 @@ console.log('gNotes', gNotes);
 
 
 function addNewNote(note){
-    gNotes.unshift(_createNote(note.type, note.info.txt, note.info.url, note.info.label, note.info.todos));
+    //type, isPinned, txt, url, label, todos, backgroundColor = '#ffffff'
+    gNotes.unshift(_createNote(note.type, note.isPinned, note.info.txt, note.info.url, note.info.label, note.info.todos));
     storageService.storeToStorage(STORAGE_KEY, gNotes);
 }
 

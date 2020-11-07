@@ -8,25 +8,37 @@ export default {
     name: 'keep-app',
     template: `<section>
         <add-note @added="addNote"></add-note>
-        <note-filter></note-filter>
+        <note-filter @filtered="setFilter"></note-filter>
         <note-list v-show="notesToShow" :notes="notesToShow"></note-list>
     </section>`,
     data() {
         return {
+            filterBy: {byTxt: '', byType: ''},
             notes: noteService.getNotes(),
             newNote: noteService.getEmptyNote(),    
         }
     },
     computed:{
         notesToShow(){
-            return this.notes;
+            //return this.notes;
+            if(this.filterBy.byType === '') {
+                if(this.filterBy.byTxt === '') return this.notes;
+                const txt= this.filterBy.byTxt.toLowerCase();
+                return this.notes.filter(note => 
+                    note.type === 'noteTxt' && 
+                    note.info.txt.toLowerCase().includes(txt))
+            };
+            return this.notes.filter(note => note.type === this.filterBy.byType)
         } 
     },
     methods:{
         addNote(newNote){
             console.log('Note added!', newNote)
             noteService.addNewNote(newNote)
-        } 
+        },
+        setFilter(filterBy){
+            this.filterBy = filterBy;
+        }
     },
     created(){   
         eventBus.$on(EVENT_REMOVE_NOTE, (noteId) => {
