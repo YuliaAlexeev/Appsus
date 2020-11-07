@@ -28,7 +28,6 @@ function getEmails(){
 function replyToMail(emailId){
     isReply = true;
     emailIdToReply = emailId;
-    console.log(isReply, emailId);
     return Promise.resolve('ok');
 }
 
@@ -133,11 +132,23 @@ function toggleReadEmail(emailId){
 
 function _createEmails(){
     var emails = [
-        {id: utilService.makeId(), sender:'Puki', to:'', subject: 'Important', body: 'Pick up!', isRead: false, isInbox: false, isChecked: false, isStarred: false, isDeleted: false, isSent: true, sentAt : 1551133930594},
-        {id: utilService.makeId(), sender:'Wolt', to:'', subject: 'New food on Wolt', body: 'Pick up!', isRead: true, isInbox: false, isChecked: false, isStarred: true, isDeleted: false, isSent: true, sentAt : 1551133930595},
-        {id: utilService.makeId(), sender:'AllJobs', to:'mymail@gmail.com', subject: 'Looking for a job?', body: 'Pick up!', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1551133930596},
-        {id: utilService.makeId(), sender:'Tuki', to:'mymail@gmail.com', subject: 'Check it out', body: 'Pick up!', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1551133930597},
-        {id: utilService.makeId(), sender:'Buki', to:'mymail@gmail.com', subject: 'Wassap?', body: 'Pick up!', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1551133930598}
+        {id: utilService.makeId(), sender:'Puki', to:'mymail@gmail.com', subject: 'Important', body: 'Call Muki!', isRead: true, isInbox: false, isChecked: false, isStarred: false, isDeleted: true, isSent: false, sentAt : 1603573200000},
+        
+        
+        
+       //sent
+       {id: utilService.makeId(), sender:'Me', to:'wolt@mail.com', subject: 'Where is my food??', body: 'Order didn`t arrived', isRead: true, isInbox: false, isChecked: false, isStarred: false, isDeleted: false, isSent: true, sentAt : 1600808400000},
+       {id: utilService.makeId(), sender:'Me', to:'dropbox@gmail.com', subject: 'My account', body: 'I want to upgrade to get more space', isRead: true, isInbox: false, isChecked: false, isStarred: false, isDeleted: false, isSent: true, sentAt : 1603486800000},
+       {id: utilService.makeId(), sender:'Me', to:'muki@gmail.com', subject: 'Wassap?', body: 'Pick up!', isRead: true, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: true, sentAt : 1603486800000},
+       
+        //inbox
+        {id: utilService.makeId(), sender:'AllJobs', to:'mymail@gmail.com', subject: 'Looking for a job?', body: 'Pick up!', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1603573200000},
+        {id: utilService.makeId(), sender:'Dropbox', to:'mymail@gmail.com', subject: 'Changes in your folder', body: 'Someone deleted all your work', isRead: true, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1603400400000},
+        {id: utilService.makeId(), sender:'LinkedIn', to:'mymail@gmail.com', subject: 'Share your thoughts on LinkedIn', body: 'Check out our new features!', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1603400400000},
+        {id: utilService.makeId(), sender:'Wolt', to:'mymail@gmail.com', subject: 'Purchase receipt: Halahmaniya 05.11.2020', body: 'Receipt / Tax invoice (Original) #7958913', isRead: true, isInbox: true, isChecked: false, isStarred: true, isDeleted: false, isSent: false, sentAt : 1600808400000},
+        {id: utilService.makeId(), sender:'Slack', to:'mymail@gmail.com', subject: '[Slack] Notifications from the Coding Academy', body: 'You have a new direct message in Coding Academy', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1603486800000},
+        {id: utilService.makeId(), sender:'Slack', to:'mymail@gmail.com', subject: '[Slack] Notifications from the Coding Academy', body: 'You have a new direct message in Coding Academy', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1603486800000},
+        {id: utilService.makeId(), sender:'Slack', to:'mymail@gmail.com', subject: '[Slack] Notifications from the Coding Academy', body: 'You have a new direct message in Coding Academy', isRead: false, isInbox: true, isChecked: false, isStarred: false, isDeleted: false, isSent: false, sentAt : 1603486800000}
     ];
 
     storageService.storeToStorage(MAIL_DB_KEY, emails);

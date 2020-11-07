@@ -14,6 +14,7 @@ export default {
         <div class="mail-details">
             <div class="elem">Subject: {{email.subject}}</div>
             <div class="elem">From: {{email.sender}}</div>
+            <div class="elem">To: {{email.to}}</div>
             <div>{{email.body}}</div>
             <img class="clickable reply" src="apps/mister-email/assets/reply.png" @click="replyToMail"></img>
             <img class="clickable forward" src="apps/mister-email/assets/forward.png"></img>
