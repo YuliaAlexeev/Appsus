@@ -18,8 +18,10 @@ body, h1 {
     padding: 0;
     margin: 0;
 }
-iframe{
+
+iframe, audio{
     border: 0;
+    width: 100%;
 }
 button {
     cursor: pointer;
@@ -92,6 +94,58 @@ input[type='text'] {
       transform: scale(1);
     }
   }
+
+
+.user-msg {
+  font-size: 18px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #394855;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.user-msg-btn {
+  color: #ca9fb4;
+  background: transparent;
+  border: 0;
+}
+
+.welcome-pic{
+  margin: 40px;
+  border-radius: 15%;
+}
+
+.apps-pic{
+  margin-top: 50px;
+  filter: brightness(0.7);
+}
+
+.main-page-msg{
+  margin-top: 100px;
+  text-align: center;
+  font-family: dancingScript;
+  font-size: 90px;
+}
+
+.flex{
+  display: flex;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.clickable{
+  cursor: pointer;
+}
 
   .user-msg {
     font-size: 18px;
