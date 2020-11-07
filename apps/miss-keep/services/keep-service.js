@@ -7,19 +7,17 @@ var gNotesData = _createNotes();
 
 function _createNotes(){
     const notes =[];
-    notes.push(_createNote('noteImg', false, undefined, 'https://media3.giphy.com/media/L0NvsV1pBDRCcVQBGY/giphy.gif?cid=ecf05e47pdmfe1uk7cx0jrc67x7iyhij1hoki2be62cl0imo&rid=giphy.gif', undefined,undefined, '#660033' ));
+    notes.push(_createNote('noteImg', true, undefined, 'https://media3.giphy.com/media/L0NvsV1pBDRCcVQBGY/giphy.gif?cid=ecf05e47pdmfe1uk7cx0jrc67x7iyhij1hoki2be62cl0imo&rid=giphy.gif', undefined,undefined, '#660033' ));
     notes.push(_createNote('noteTxt', false, 'full stack me baby!', undefined, undefined, undefined,'#7166f9' ));
     notes.push(_createNote('noteImg', false, undefined, 'https://www.meissl.com/media/images/8f24db1f/schweiz.jpg', undefined ));
     notes.push(_createNote('noteTxt', true, 'The most beautiful things in the world cannot be seen or even touched. They must be felt with the heart.', undefined, undefined,undefined,'#bddaf2' ));
-    notes.push(_createNote('noteImg', true, undefined, 'https://icatcare.org/app/uploads/2020/10/webinars-1-650x500.jpg', undefined,undefined, '#ff6a3b' ));
+    notes.push(_createNote('noteImg', false, undefined, 'https://icatcare.org/app/uploads/2020/10/webinars-1-650x500.jpg', undefined,undefined, '#FF0366' ));
     notes.push(_createNote('noteImg', false, undefined, 'https://media.giphy.com/media/xULW8PLGQwyZNaw68U/giphy.gif', undefined,undefined, '#e6ffb3' ));
     notes.push(_createNote('noteAudio', false, undefined, 'https://www.bensound.com/bensound-music/bensound-theelevatorbossanova.mp3', undefined,undefined, '#02bf4f' ));
-    notes.push(_createNote('noteVideo', false, undefined, 'https://www.youtube.com/watch?v=H-PysSOwxsQ&', undefined,undefined, '#993333' ));
+    notes.push(_createNote('noteVideo', false, undefined, 'https://www.youtube.com/watch?v=H-PysSOwxsQ&', undefined,undefined, '#aaaaaa' ));
     notes.push(_createNote('noteTodo', true, undefined, undefined, undefined, [{ txt: 'Eat', isDone: false }, { txt: 'Sleep', isDone: false }, { txt: 'Code', isDone: true }, { txt: 'Repeat', isDone: true } ] , '#ffb3b3' ));
     notes.push(_createNote('noteImg', false, undefined, 'https://media3.giphy.com/media/r4qCKeiUQdppS/giphy.gif', undefined,undefined, '#cccc00' ));
     notes.push(_createNote('noteTodo', false, undefined, undefined, undefined, [{ txt: 'Smiley :)', isDone: true }, { txt: 'Think positive', isDone: true }, { txt: 'Love', isDone: true }, { txt: 'Be happy', isDone: true }, { txt: 'Laugh often', isDone: true }, { txt: 'Help someone (othen than myself)', isDone: true }, { txt: 'Have some fun', isDone: true } ] , '#00ffff' ));
-
-
     return notes;
 }
 
