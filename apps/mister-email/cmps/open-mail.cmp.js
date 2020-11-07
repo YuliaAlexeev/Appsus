@@ -1,14 +1,14 @@
 import { mailService } from '../services/mail-service.js';
-import { eventBus, EVENT_MAIL_WAS_READ } from '../../../js/services/event-bus-service.js';
+import { eventBus, EVENT_MAIL_WAS_READ, SAVE_MAIL_AS_NOTE, USR_MSG } from '../../../js/services/event-bus-service.js';
 
 export default {
     template: `
     <div class="mail-details-container">
         <div>
-            <img src="apps/mister-email/assets/3.png" @click="goBack"></img>
-            <img src="apps/mister-email/assets/trash.png" @click="deleteEmail"></img>
-            <img src="apps/mister-email/assets/unread.png" @click="toggleReadEmail"></img>
-            <img src="apps/mister-email/assets/6.png"></img>
+            <img class="clickable" src="apps/mister-email/assets/3.png" @click="goBack"></img>
+            <img class="clickable" src="apps/mister-email/assets/trash.png" @click="deleteEmail"></img>
+            <img class="clickable" src="apps/mister-email/assets/unread.png" @click="toggleReadEmail"></img>
+            <img class="clickable" src="apps/mister-email/assets/plus.png" @click="saveAsNote"></img>
         </div>
 
         <div class="mail-details">
@@ -59,6 +59,12 @@ export default {
             mailService.replyToMail(this.email.id).then(() => {
                 this.$router.push(`/mail/new`);
             })
+        },
+        saveAsNote(){
+            var noteFormat = {sender: this.email.sender, receiver: this.email.to, subject: this.email.subject, body: this.email.body};
+            // eventBus.$emit(SAVE_MAIL_AS_NOTE);
+            eventBus.$emit(USR_MSG, 'Saved to notes');
+            this.$router.push({ path: '/keep', query: noteFormat });
         }
     }
 

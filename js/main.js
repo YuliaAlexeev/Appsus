@@ -7,7 +7,7 @@ const options = {
     router: myRouter,
     template: `
     <section class="wrapper">
-        <header class="header">
+        <header class="header flex align-center">
             <h1 class="clickable" @click="goToHomePage">Appsus</h1>
             <nav class="nav">
                 <router-link to="/" >Home</router-link>

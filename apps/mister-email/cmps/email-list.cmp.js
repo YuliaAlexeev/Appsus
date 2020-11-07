@@ -77,8 +77,8 @@ export default {
             return filteredEmails;
         },
         sortBy(emails, sortBy) {
-            if (sortBy === 'Sort by Title') {
-                return emails.sort((a, b) => a.subject.localeCompare(b.subject));
+            if (sortBy === 'By Title') {
+                return emails.sort((a, b) => (a.sender).localeCompare(b.sender));
             } else {
                 return emails.sort((a, b) => b.sentAt - a.sentAt);
             }

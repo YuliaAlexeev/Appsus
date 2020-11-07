@@ -8,5 +8,6 @@ export const SORT = 'sort';
 export const FILTER = 'filter';
 export const SEARCH = 'search';
 export const OPEN_MENU = 'open-menu';
+export const SAVE_MAIL_AS_NOTE = 'save-mail-as-note';
 
 export const eventBus = new Vue()

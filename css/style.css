@@ -1,6 +1,11 @@
 @import './keep/style.css';
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
+@font-face {
+  font-family: dancingScript;
+  src: url(../js/assets/fonts/DancingScript-VariableFont_wght.ttf);
+}
+
 body {
     color: #1c1c1f;
     background: linear-gradient(#d7ccfc, transparent),
@@ -127,7 +132,12 @@ input[type='text'] {
   filter: brightness(0.7);
 }
 
-/* HELPERS */
+.main-page-msg{
+  margin-top: 100px;
+  text-align: center;
+  font-family: dancingScript;
+  font-size: 90px;
+}
 
 .flex{
   display: flex;
@@ -143,4 +153,38 @@ input[type='text'] {
 
 .clickable{
   cursor: pointer;
+}
+
+@media screen and (max-width: 790px){
+  .main-page-msg{
+    font-size: 70px;
+  }
+
+  .welcome-pic{
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 630px){
+  .main-page-msg{
+    font-size: 50px;
+  }
+
+  .apps-pic{
+    flex-direction: column;
+  }
+
+  .welcome-pic{
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .apps-pic{
+    flex-direction: column;
+  }
+  
+  .nav{
+    display: none;
+  }
 }
