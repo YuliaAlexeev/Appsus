@@ -17,11 +17,11 @@
   background-color: transparent;
 }
 .new-note-btn{
-  border-radius: 20px;
+  border-radius: 50%;
   border: 0;
   background-color: rgba(250,250,250,0.9);
   padding: 10px;
-  width: 40px;
+  width: 35px;
   margin: 0 3px;
   transition: all .2s ease-in-out;
 }
@@ -55,7 +55,7 @@
   background-color: transparent;
   border: 0;
   background: rgba(250,250,250,0.5);
-  border-radius: 20px;
+  border-radius: 50%;
   width: 33px;
   height: 33px;
   display: block;
@@ -87,4 +87,30 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.note-filter{
+  border-radius: 20px;
+  border: 0;
+  background-color: rgba(250,250,250,0.9);
+  max-width: 250px;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.2);
+  margin: 20px auto;
+}
+
+
+
+.note-filter input, .note-filter select{
+  border-radius: 20px;
+  border: 0;
+  background-color: transparent;
+  outline: 0;
+  color: #c9c7cf;
+}
+
+.note-filter input:focus{
+  width: 300px;
+}
+.note-filter input{
+  border-right: 1px solid #c9c7cf ;
 }

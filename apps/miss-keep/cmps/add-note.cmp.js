@@ -14,10 +14,11 @@ export default {
             input: '',
             newNote: {
                 type: 'noteTxt',
+                isPinned: false,
                 info: {
                     txt: '',
                     url: '',
-                    todos: ''
+                    todos: '',
                     // todos: [
                     //     {
                     //         txt: 'Do this',
@@ -47,18 +48,19 @@ export default {
             this.newNote.type = type;
         },
         emitAddNote() {
-            // noteService.addNewNote(this.newNote)
-            if (this.newNote.type === 'noteTxt') {
-                this.newNote.info.txt = this.input;
-            } else if (this.newNote.type === 'noteImg') {
-                this.newNote.info.url = this.input;
-            } else if (this.newNote.type === 'noteTodo') {
-                this.newNote.info.todos = this.input;
-            }   else if (this.newNote.type === 'noteVideo') {
-                this.newNote.info.url = this.input;
+            if (this.input != '') {
+                if (this.newNote.type === 'noteTxt') {
+                    this.newNote.info.txt = this.input;
+                } else if (this.newNote.type === 'noteImg') {
+                    this.newNote.info.url = this.input;
+                } else if (this.newNote.type === 'noteTodo') {
+                    this.newNote.info.todos = this.input;
+                } else if (this.newNote.type === 'noteVideo') {
+                    this.newNote.info.url = this.input;
+                }
+                this.$emit('added', JSON.parse(JSON.stringify(this.newNote)));
+                this.input = '';
             }
-            this.$emit('added', JSON.parse(JSON.stringify(this.newNote)));
-            // this.newNote = { type: 'noteTxt', info: { txt: '' } };
         },
     },
 };
