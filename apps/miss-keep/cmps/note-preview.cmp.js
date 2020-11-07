@@ -12,12 +12,12 @@ export default{
                    <component :is="note.type" :note="note"/>
                    <transition name="fade">
                    <div v-show="controls" class="controls">
-                        <button @click="emitRemove(note.id)" class="fas fa-trash-alt"></button>
-                        <label class="controls-color-label">
+                        <button @click="emitRemove(note.id)" class="note-btn fas fa-trash-alt"></button>
+                        <label class="note-btn controls-color-label">
                             <input type="color" v-model="pickColor" @change="emitColor(note.id)"/> 
                             <i class="fas fa-palette"></i>
                         </label>
-                        <button @click="emitPin(note.id)" class="note-preview-pin fas fa-thumbtack"></button>
+                        <button @click="emitPin(note.id)" class="note-btn note-preview-pin fas fa-thumbtack"></button>
                     </div>
                     </transition>
                 </div>  

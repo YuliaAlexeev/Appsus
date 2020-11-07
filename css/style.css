@@ -22,6 +22,7 @@ body, h1 {
 iframe, audio{
     border: 0;
     width: 100%;
+    outline: 0;
 }
 button {
     cursor: pointer;
@@ -147,76 +148,65 @@ input[type='text'] {
   cursor: pointer;
 }
 
-  .user-msg {
-    font-size: 18px;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #394855;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-  }
 
+.welcome-pic{
+  margin: 40px;
+  border-radius: 15%;
+}
+
+.main-page-msg{
+  margin-top: 100px;
+  text-align: center;
+  font-family: dancingScript;
+  font-size: 90px;
+}
+
+/* helpers */
+.flex{
+  display: flex;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.align-center{
+  align-items: center;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+@media screen and (max-width: 790px){
+  .main-page-msg{
+    font-size: 70px;
+  }
 
   .welcome-pic{
-    margin: 40px;
-    border-radius: 15%;
+    width: 150px;
   }
+}
 
+@media screen and (max-width: 630px){
   .main-page-msg{
-    margin-top: 100px;
-    text-align: center;
-    font-family: dancingScript;
-    font-size: 90px;
+    font-size: 50px;
   }
 
-  /* helpers */
-  .flex{
-    display: flex;
-  }
-  
-  .justify-center{
-    justify-content: center;
-  }
-  
-  .align-center{
-    align-items: center;
+  .apps-pic{
+    flex-direction: column;
   }
 
-  .clickable{
-    cursor: pointer;
+  .welcome-pic{
+    width: 200px;
   }
+}
 
-  @media screen and (max-width: 790px){
-    .main-page-msg{
-      font-size: 70px;
-    }
-
-    .welcome-pic{
-      width: 150px;
-    }
+@media screen and (max-width: 480px){
+  .apps-pic{
+    flex-direction: column;
   }
-
-    @media screen and (max-width: 630px){
-      .main-page-msg{
-        font-size: 50px;
-      }
-
-      .apps-pic{
-        flex-direction: column;
-      }
-  
-      .welcome-pic{
-        width: 200px;
-      }
+  .nav{
+    display: none;
   }
-
-  @media screen and (max-width: 480px){
-    .apps-pic{
-      flex-direction: column;
-    }
-    .nav{
-      display: none;
-    }
 }

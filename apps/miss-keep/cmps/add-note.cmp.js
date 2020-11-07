@@ -1,14 +1,14 @@
 export default {
     template: `
-    <div class="new-note">
+    <div class="add-note">
         <input type="text" v-model="input" :placeholder="placeholder" />
-        <div class="new-note-btns">
-            <button @click="setType('noteTxt')" class="new-note-btn fas fa-font" title="Add text"></button> 
-            <button @click="setType('noteImg')" class="new-note-btn fas fa-image" title="Add text"></button> 
-            <button @click="setType('noteTodo')" class="new-note-btn fas fa-list"></button>
-            <button @click="setType('noteVideo')" class="new-note-btn fab fa-youtube"></button>
-            <button @click="setType('noteAudio')" class="new-note-btn fas fa-volume-up"></button>
-            <button @click="emitAddNote" class="new-note-btn fas fa-plus"></button>
+        <div class="add-note-btns">
+            <button @click="setType('noteTxt')" class="note-btn add-note-btn fas fa-font"></button> 
+            <button @click="setType('noteImg')" class="note-btn add-note-btn fas fa-image"></button> 
+            <button @click="setType('noteTodo')" class="note-btn add-note-btn fas fa-list"></button>
+            <button @click="setType('noteVideo')" class="note-btn add-note-btn fab fa-youtube"></button>
+            <button @click="setType('noteAudio')" class="note-btn add-note-btn fas fa-volume-up"></button>
+            <button @click="emitAddNote" class="note-btn add-note-btn fas fa-plus"></button>
         </div>  
     </div>
     `,
