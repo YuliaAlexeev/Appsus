@@ -8,7 +8,7 @@ import { eventBus, EVENT_REMOVE_NOTE, EVENT_SET_NOTE_COLOR, EVENT_SET_PINNED } f
 export default{
     props: ['note'],
     name: 'note-preview',
-    template: `<transition name="bounce"><div class="note-preview" dir="auto" @mouseover="controls=true" @mouseleave="controls=false" :style="{ 'background-color': bgColor }"> 
+    template: `<transition name="bounce"><div class="note-preview" @mouseover="controls=true" @mouseleave="controls=false" :style="{ 'background-color': bgColor }"> 
                    <component :is="note.type" :note="note"/>
                    <transition name="fade">
                    <div v-show="controls" class="controls">
