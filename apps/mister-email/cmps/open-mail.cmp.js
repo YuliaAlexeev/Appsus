@@ -62,8 +62,6 @@ export default {
         },
         saveAsNote(){
             var noteFormat = {sender: this.email.sender, receiver: this.email.to, subject: this.email.subject, body: this.email.body};
-            // eventBus.$emit(SAVE_MAIL_AS_NOTE);
-            eventBus.$emit(USR_MSG, 'Saved to notes');
             this.$router.push({ path: '/keep', query: noteFormat });
         }
     }
