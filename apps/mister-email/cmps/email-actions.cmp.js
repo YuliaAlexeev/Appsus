@@ -4,6 +4,7 @@ import { eventBus, EVENT_MAIL_WAS_READ, OPEN_MENU } from '../../../js/services/e
 export default {
     template: `
     <div class="side-bar-container">
+        <div class="screen" :class="{screenOpen: isOpenMenu}" @click="closeMenu"></div>
         <div class="side-bar" :class="{menuOpen: isOpenMenu}">
             <div class="clickable flex align-center compose" @click="composeNewMail">  
                 <span class="compose-plus">+</span>
@@ -85,6 +86,9 @@ export default {
             this.isStarredOn = false;
             this.isDeletedOn = false;
             this.isSentOn = false;
+        },
+        closeMenu(){
+            this.isOpenMenu = false;
         }
     }
 }

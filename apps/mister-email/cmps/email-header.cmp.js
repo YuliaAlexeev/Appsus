@@ -9,12 +9,12 @@ export default {
             </label>
             <input id="searchIt" @input="searchMail" class="input-search" type="text" placeholder="Search mail" v-model="search"/>
 
-            <select class="sort" v-model="sort" @change="sortBy">
-                    <option width=50 heigth=50>Sort by Date</option>
-                    <option width=50 heigth=50>Sort by Title</option> 
+            <select class="sort clickable"" v-model="sort" @change="sortBy">
+                    <option width=50 heigth=50>By Date</option>
+                    <option width=50 heigth=50>By Title</option> 
             </select>
 
-            <select class="filter-by-read" v-model="filter" @change="filterBy">
+            <select class="filter-by-read clickable" v-model="filter" @change="filterBy">
                     <option width=50 heigth=50>All</option>
                     <option width=50 heigth=50>Read</option>
                     <option width=50 heigth=50>Unread</option>
@@ -26,7 +26,7 @@ export default {
             search: '',
             selected: '',
             filter: 'All',
-            sort: 'Sort by Date'
+            sort: 'By Date'
         }
     },
     computed: {
