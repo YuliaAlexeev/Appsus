@@ -256,6 +256,14 @@ color: orange;
 
 
 @media screen and (max-width: 760px){
+
+  .email-td{
+    font-size: 14px;
+  }
+
+  .sender{
+    width: 40%;
+  }
   .hamburger{
     display: block;
   }
@@ -323,7 +331,16 @@ color: orange;
   visibility: visible;
 }
 
-@media screen and (max-width: 545px){
+@media screen and (max-width: 560px){
+
+  .email-td{
+    font-size: 12px;
+  }
+
+  /* .sender{
+    width: 40%;
+  } */
+
   .sort{
     display: none;
   }

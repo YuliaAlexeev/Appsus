@@ -8,7 +8,7 @@ export default {
             <tr class="email-row" :class="{read:isRead}">
                 <td class="email-td" width=5% @click.stop="checkEmail"><input type="checkbox"></td>
                 <td class="email-td" width=5% @click.stop="starEmail"><span class="fa fa-star" :class="{starred: isStarred}"></span></td>
-                <td class="email-td" width=20%>{{senderDisplay}}</td>
+                <td class="email-td sender" width=20%>{{senderDisplay}}</td>
                 <td class="email-td" width=45%>{{email.subject}}</td>
                 <td class="email-td" width=20%>{{sentAt}}</td>
                 <td class="email-td trash" width=50 @click.stop="deleteEmail">
