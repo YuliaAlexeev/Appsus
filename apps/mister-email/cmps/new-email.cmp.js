@@ -4,7 +4,7 @@ import { eventBus, USR_MSG } from '../../../js/services/event-bus-service.js';
 export default {
     template: `
         <form class="new-email" @submit.prevent="sendMail">
-            <div class="newMessage flex space-between">
+            <div class="message-header newMessage flex space-between">
                 <span>Message</span>
                 <span class="cancel clickable" @click="cancelMail">x</span>
             </div>

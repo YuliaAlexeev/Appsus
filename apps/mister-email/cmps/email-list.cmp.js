@@ -80,7 +80,7 @@ export default {
             if (sortBy === 'Sort by Title') {
                 return emails.sort((a, b) => a.subject.localeCompare(b.subject));
             } else {
-                return emails.sort((a, b) => a.sentAt - b.sentAt);
+                return emails.sort((a, b) => b.sentAt - a.sentAt);
             }
         },
         searchEmails(emails, searchStr) {
