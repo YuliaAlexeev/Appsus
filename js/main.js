@@ -1,6 +1,7 @@
 import { myRouter } from './routes.js';
 import userMsg from './pages/global-usr-msg.cmp.js';
 
+
 const options = {
     el: '#app',
     router: myRouter,
@@ -12,7 +13,7 @@ const options = {
                 <router-link to="/" >Home</router-link>
                 <router-link to="/mail/inbox" >Mail</router-link>
                 <router-link to="/keep" >Keep</router-link>
-            </nav>  
+            </nav> 
         </header>
         <main class="main">
             <user-msg/>
@@ -23,7 +24,7 @@ const options = {
         </footer>
     </section>`,
     components:{
-        userMsg
+        userMsg,
     }
 };
 
