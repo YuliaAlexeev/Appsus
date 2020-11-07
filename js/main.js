@@ -8,7 +8,7 @@ const options = {
     template: `
     <section class="wrapper">
         <header class="header">
-            <h1>Appsus</h1>
+            <h1 class="clickable" @click="goToHomePage">Appsus</h1>
             <nav class="nav clear-list">
                 <router-link to="/" >Home</router-link>
                 <router-link to="/mail/inbox" >Mail</router-link>
@@ -25,6 +25,11 @@ const options = {
     </section>`,
     components:{
         userMsg,
+    },
+    methods:{
+        goToHomePage(){
+            this.$router.push('/');
+        }
     }
 };
 

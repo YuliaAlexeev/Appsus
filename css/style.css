@@ -113,7 +113,6 @@ input[type='text'] {
   .apps-pic{
     margin-top: 50px;
     filter: brightness(0.7);
-    cursor: pointer;
   }
 
   /* helpers */
@@ -127,4 +126,8 @@ input[type='text'] {
   
   .align-center{
     align-items: center;
+  }
+
+  .clickable{
+    cursor: pointer;
   }
