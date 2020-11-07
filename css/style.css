@@ -46,18 +46,17 @@ input[type='text'] {
     margin: 20px 10px;
 }
 .header {
-    background-color: #CA9FB4;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+  background-color: #CA9FB4;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  color:white
 }
 .footer {
-    background-color: #7d8191;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    color: white;
+  background-color:#394855;
+  text-align: center;
+  padding: 10px;
+  color: white;
 }
 .nav > * {
     text-decoration: none;
